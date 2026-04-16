@@ -1,0 +1,1567 @@
+/* =============================================================
+   Villa Monceau — Custom CSS
+   Inspiré de Regent (Framer). Luxe boutique belge.
+   Couleurs: #16323C (vert profond) · #CEA77C (or champagne)
+   ============================================================= */
+
+/* ——— Reset & Base ——— */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+/* ——— HEADER ——— */
+.vm-site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+  background: transparent;
+}
+
+.vm-site-header.scrolled {
+  background: #FFFFFF;
+  box-shadow: 0 1px 20px rgba(0,0,0,0.07);
+}
+
+.vm-header {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2.5rem;
+}
+
+.vm-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Site title as logo */
+.vm-header .wp-block-site-title a,
+.vm-header__logo a {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #CEA77C !important;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+/* Hamburger */
+.vm-hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  display: none; /* shown only on mobile via media query */
+  flex-direction: column;
+  gap: 5px;
+}
+
+.vm-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1.5px;
+  background: #CEA77C;
+  transition: all 0.3s;
+}
+
+/* Nav links */
+.vm-header__right {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.vm-nav .wp-block-navigation__container,
+.vm-nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vm-nav a,
+.vm-site-header .wp-block-navigation a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.vm-site-header.scrolled .vm-nav a,
+.vm-site-header.scrolled .wp-block-navigation a {
+  color: #16323C;
+}
+
+.vm-nav a:hover { color: #CEA77C !important; }
+
+/* Book button */
+.vm-btn-book .wp-block-button__link {
+  background: #CEA77C !important;
+  color: #fff !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  padding: 0.7rem 1.8rem !important;
+  border-radius: 0 !important;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.vm-btn-book .wp-block-button__link:hover {
+  background: #16323C !important;
+}
+
+/* Mobile menu */
+.vm-mobile-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #16323C;
+  padding: 2rem 2.5rem;
+  gap: 1.2rem;
+}
+
+.vm-mobile-menu.open { display: flex; }
+
+.vm-mobile-menu a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  color: #F5EFE6;
+  text-decoration: none;
+  font-style: italic;
+}
+
+.vm-mobile-menu__book {
+  margin-top: 1rem;
+  background: #CEA77C;
+  color: #fff !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-style: normal !important;
+  font-size: 0.7rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  text-align: center;
+}
+
+/* Header scroll JS */
+.vm-site-header--dark { background: rgba(22,50,60,0.85); backdrop-filter: blur(4px); }
+
+/* ——— HERO ——— */
+.vm-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Inner container du cover = zone de contenu hero */
+.vm-hero .wp-block-cover__inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 12vh 2rem 8vh;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.vm-hero__label {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.7rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: #CEA77C !important;
+  margin: 0 !important;
+}
+
+.vm-hero__title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(3rem, 7vw, 6.5rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.02em !important;
+  color: #FFFFFF !important;
+  margin: 0 !important;
+}
+
+.vm-hero__title em {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.vm-divider-gold {
+  width: 60px !important;
+  height: 1px !important;
+  background-color: #CEA77C !important;
+  border: none !important;
+  margin: 0 auto !important;
+}
+
+.vm-hero__tagline {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.95rem !important;
+  font-weight: 300 !important;
+  color: rgba(255,255,255,0.75) !important;
+  letter-spacing: 0.02em !important;
+  margin: 0 !important;
+  max-width: 480px;
+}
+
+.vm-btn-hero .wp-block-button__link {
+  background: transparent !important;
+  color: #FFFFFF !important;
+  border: 1px solid #CEA77C !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  padding: 1rem 2.5rem !important;
+  border-radius: 0 !important;
+  transition: all 0.3s !important;
+}
+
+.vm-btn-hero .wp-block-button__link:hover {
+  background: #CEA77C !important;
+  color: #fff !important;
+}
+
+/* Scroll indicator */
+.vm-hero__scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: rgba(255,255,255,0.5);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ——— SECTIONS : backgrounds et padding ——— */
+/* Ces styles remplacent les attributs style inline retirés des blocs */
+
+.vm-usp {
+  background-color: #16323C;
+  color: #FFFFFF;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.vm-about {
+  background-color: #F5EFE6;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.vm-about__cols { column-gap: 5rem; }
+
+.vm-gallery-strip { background-color: #F5EFE6; }
+
+.vm-rooms {
+  background-color: #FFFFFF;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.vm-rooms__intro { column-gap: 4rem; margin-bottom: 4rem; }
+.vm-rooms__grid { margin-top: 1rem; }
+
+.vm-divider-light {
+  background-color: #E8DDD0 !important;
+  height: 1px !important;
+  border: none !important;
+  margin: 4rem 0 !important;
+  width: 100% !important;
+}
+
+.vm-location {
+  background-color: #16323C;
+  color: #FFFFFF;
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
+
+.vm-location__cols { column-gap: 5rem; }
+
+/* Footer */
+.vm-footer {
+  background-color: #16323C;
+  color: #FFFFFF;
+}
+
+/* Single chambre */
+.vm-single-chambre__content {
+  background-color: #F5EFE6;
+  padding-top: 5rem;
+  padding-bottom: 6rem;
+}
+
+.vm-single-chambre__cols { gap: 5rem; }
+
+.vm-booking-card {
+  background-color: #16323C;
+  color: #FFFFFF;
+  padding: 2.5rem;
+  position: sticky;
+  top: 120px;
+}
+
+.vm-booking-card p { color: rgba(255,255,255,0.7) !important; }
+
+/* ——— USP STRIP ——— */
+.vm-usp .wp-block-columns { gap: 0; }
+
+.vm-usp__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 1.5rem;
+  border-right: 1px solid rgba(206,167,124,0.2);
+}
+
+.vm-usp__item:last-child { border-right: none; }
+
+.vm-usp__icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vm-usp__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.vm-usp__desc {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.78rem !important;
+  font-weight: 300 !important;
+  color: rgba(255,255,255,0.55) !important;
+  margin: 0 !important;
+}
+
+/* ——— SECTION LABEL ——— */
+.vm-label {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.25em !important;
+  text-transform: uppercase !important;
+  color: #CEA77C !important;
+  margin-bottom: 1rem !important;
+}
+
+.vm-label--light { color: rgba(206,167,124,0.7) !important; }
+
+/* ——— ABOUT ——— */
+.vm-about__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  color: #16323C !important;
+  margin-top: 0 !important;
+}
+
+.vm-about__title em { font-style: italic; font-weight: 300; }
+
+.vm-about__text {
+  font-size: 0.95rem !important;
+  line-height: 1.8 !important;
+  color: #4A4A4A !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.vm-divider-thin {
+  width: 40px !important;
+  height: 1px !important;
+  background-color: #CEA77C !important;
+  border: none !important;
+  margin: 1.5rem 0 !important;
+}
+
+.vm-about__link a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #16323C;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.vm-about__link a:hover { color: #CEA77C; }
+
+/* ——— GALLERY STRIP ——— */
+.vm-gallery-strip__inner {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+}
+
+.vm-gallery-strip__inner::-webkit-scrollbar { display: none; }
+
+.vm-gallery-strip__slide {
+  flex: 0 0 auto;
+  width: 45vw;
+  height: 480px;
+  overflow: hidden;
+}
+
+.vm-gallery-strip__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.vm-gallery-strip__slide:hover img { transform: scale(1.03); }
+
+/* ——— ROOMS ——— */
+.vm-rooms__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  color: #16323C !important;
+}
+
+.vm-rooms__title em { font-style: italic; font-weight: 300; }
+
+.vm-rooms__viewall a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #CEA77C;
+  text-decoration: none;
+}
+
+/* Photo stack (Regent style) */
+.vm-rooms__photo-stack {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.vm-rooms__photo-stack-top {
+  grid-column: 1 / 3;
+  height: 320px;
+  overflow: hidden;
+}
+
+.vm-rooms__photo-stack-bottom {
+  grid-column: 1 / 3;
+  height: 220px;
+  overflow: hidden;
+}
+
+.vm-rooms__photo-stack img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.vm-rooms__photo-stack img:hover { transform: scale(1.03); }
+
+/* Room cards */
+.vm-room-card {
+  background: #FFFFFF;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vm-room-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(22,50,60,0.1);
+}
+
+.vm-room-card__img {
+  width: 100% !important;
+  height: 300px !important;
+  overflow: hidden;
+  display: block !important;
+}
+
+.vm-room-card__img a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.vm-room-card__img img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.vm-room-card:hover .vm-room-card__img img { transform: scale(1.04); }
+
+.vm-room-card__body {
+  padding: 1.5rem !important;
+  background: #FFFFFF;
+}
+
+.vm-room-card__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 500 !important;
+  color: #16323C !important;
+  margin-bottom: 0.5rem !important;
+  margin-top: 0 !important;
+}
+
+.vm-room-card__title a { text-decoration: none; color: inherit; }
+.vm-room-card__title a:hover { color: #CEA77C; }
+
+.vm-room-card__excerpt p {
+  font-size: 0.85rem !important;
+  color: #6B6B6B !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.vm-room-card__link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #CEA77C;
+  text-decoration: none;
+}
+
+/* ——— LOCATION ——— */
+.vm-location__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.1 !important;
+  color: #FFFFFF !important;
+}
+
+.vm-location__title em { font-style: italic; font-weight: 300; }
+
+.vm-location__list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.vm-location__list li {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+}
+
+/* Bullet doré via CSS — remplace le span .vm-location__bullet */
+.vm-location__list li::before {
+  content: '·';
+  color: #CEA77C;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.vm-location__bullet {
+  color: #CEA77C;
+  font-size: 1.2rem;
+}
+
+.vm-location__address {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.1rem !important;
+  font-style: italic !important;
+  color: rgba(255,255,255,0.6) !important;
+  line-height: 1.7 !important;
+  margin-bottom: 2rem !important;
+}
+
+.vm-btn-outline-white .wp-block-button__link {
+  background: transparent !important;
+  color: #CEA77C !important;
+  border: 1px solid rgba(206,167,124,0.5) !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  padding: 0.9rem 2rem !important;
+  border-radius: 0 !important;
+  transition: all 0.3s !important;
+}
+
+.vm-btn-outline-white .wp-block-button__link:hover {
+  background: #CEA77C !important;
+  border-color: #CEA77C !important;
+}
+
+.vm-location__map iframe {
+  display: block;
+  width: 100%;
+  height: 420px;
+  filter: grayscale(80%) contrast(1.1);
+}
+
+/* ——— SINGLE CHAMBRE ——— */
+.vm-single-room__hero .wp-block-post-featured-image img,
+.vm-single-room__hero img {
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+  display: block;
+}
+
+.vm-single-room__back a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #CEA77C;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.vm-single-room__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
+  font-weight: 400 !important;
+  color: #16323C !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.vm-single-room__body {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #4A4A4A;
+}
+
+/* Booking card — voir .vm-booking-card dans SECTIONS ci-dessus */
+
+.vm-booking-card__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 400 !important;
+  color: #FFFFFF !important;
+  font-style: italic !important;
+  margin-bottom: 0 !important;
+}
+
+.vm-booking-card__contact {
+  font-size: 0.85rem !important;
+  color: rgba(255,255,255,0.75) !important;
+  line-height: 1.6 !important;
+}
+
+.vm-booking-card__contact a {
+  color: #CEA77C !important;
+  text-decoration: none;
+}
+
+.vm-btn-gold-full .wp-block-button__link {
+  background: #CEA77C !important;
+  color: #FFFFFF !important;
+  border-radius: 0 !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.68rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  padding: 1rem 2rem !important;
+  width: 100%;
+  text-align: center;
+  display: block;
+  transition: background 0.2s !important;
+}
+
+.vm-btn-gold-full .wp-block-button__link:hover { background: #B8935E !important; }
+
+/* ——— FOOTER ——— */
+
+.vm-footer__top {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(206,167,124,0.2);
+}
+
+.vm-footer .wp-block-site-title a {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-style: italic;
+  font-weight: 300;
+  color: #CEA77C !important;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.vm-footer__cols { gap: 3rem; margin-bottom: 3rem; }
+
+.vm-footer__label {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.6rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #CEA77C !important;
+  margin-bottom: 1.2rem !important;
+}
+
+.vm-footer p, .vm-footer li {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+}
+
+.vm-footer a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.vm-footer a:hover { color: #CEA77C; }
+
+.vm-footer__nav { list-style: none; padding: 0; margin: 0; }
+.vm-footer__nav li + li { margin-top: 0.4rem; }
+
+.vm-footer__cecila { color: rgba(206,167,124,0.7) !important; font-style: italic; }
+
+.vm-footer__socials {
+  margin-top: 0.5rem !important;
+}
+
+/* Icônes sociales : couleur dorée sur fond sombre */
+.vm-footer__socials .wp-block-social-link a,
+.vm-footer__socials .wp-block-social-link svg {
+  color: rgba(255,255,255,0.5) !important;
+  fill: rgba(255,255,255,0.5) !important;
+  transition: color 0.2s, fill 0.2s;
+}
+
+.vm-footer__socials .wp-block-social-link:hover a,
+.vm-footer__socials .wp-block-social-link:hover svg {
+  color: #CEA77C !important;
+  fill: #CEA77C !important;
+}
+
+/* Supprimer le fond coloré par défaut des social-links */
+.vm-footer__socials .wp-block-social-link {
+  background: transparent !important;
+}
+
+.vm-btn-outline .wp-block-button__link {
+  background: transparent !important;
+  color: #CEA77C !important;
+  border: 1px solid rgba(206,167,124,0.4) !important;
+  border-radius: 0 !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  padding: 0.8rem 1.8rem !important;
+  margin-top: 0.5rem;
+  transition: all 0.2s !important;
+}
+
+.vm-btn-outline .wp-block-button__link:hover {
+  background: #CEA77C !important;
+  color: #fff !important;
+}
+
+.vm-footer__bottom {
+  border-top: 1px solid rgba(206,167,124,0.15);
+  padding-top: 1.5rem;
+  margin-top: 1rem;
+}
+
+.vm-footer__copy, .vm-footer__credit {
+  font-size: 0.72rem !important;
+  color: rgba(255,255,255,0.3) !important;
+  margin: 0 !important;
+}
+
+.vm-footer__credit a { color: rgba(206,167,124,0.5); }
+
+.vm-footer__hours { margin-top: 0.5rem; }
+.vm-footer__hours-label {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.6rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: #CEA77C !important;
+  margin-bottom: 0.6rem !important;
+}
+.vm-footer__hours p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ——— RESPONSIVE ——— */
+
+/* Tablette large : 1200px */
+@media (max-width: 1200px) {
+  .vm-header { padding: 1.2rem 2rem; }
+
+  .vm-nav .wp-block-navigation__container,
+  .vm-nav ul { gap: 1.4rem; }
+
+  .vm-nav a,
+  .vm-site-header .wp-block-navigation a {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .vm-btn-book .wp-block-button__link {
+    padding: 0.6rem 1.2rem !important;
+    font-size: 0.6rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* Tablette : masquer la nav desktop, afficher le hamburger */
+@media (max-width: 900px) {
+  .vm-header { padding: 1.1rem 1.8rem; }
+
+  /* Masquer nav + bouton desktop */
+  .vm-header .vm-nav,
+  .vm-header .wp-block-navigation,
+  .vm-header .vm-btn-book,
+  .vm-header .wp-block-buttons { display: none !important; }
+
+  /* Masquer le hamburger natif WP navigation (au cas où) */
+  .wp-block-navigation__responsive-container-open { display: none !important; }
+
+  /* Afficher notre hamburger JS */
+  .vm-hamburger { display: flex !important; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .vm-header { padding: 1rem 1.5rem; }
+
+  .vm-hero__title { font-size: clamp(2.2rem, 9vw, 3.5rem) !important; }
+
+  .vm-about .wp-block-columns,
+  .vm-rooms__intro.wp-block-columns,
+  .vm-location__cols.wp-block-columns { flex-direction: column; }
+
+  .vm-about__left, .vm-about__right,
+  .vm-rooms__intro-left, .vm-rooms__intro-photos,
+  .vm-location__left, .vm-location__right { flex-basis: 100% !important; width: 100%; }
+
+  .vm-usp .wp-block-columns { flex-direction: column; gap: 1.5rem; }
+  .vm-usp__item { border-right: none; border-bottom: 1px solid rgba(206,167,124,0.2); padding-bottom: 1.5rem; }
+
+  .vm-gallery-strip__slide { width: 85vw; height: 300px; }
+
+  .vm-single-room__cols.wp-block-columns { flex-direction: column; }
+
+  .vm-about { padding-top: 4rem; padding-bottom: 4rem; }
+  .vm-rooms { padding-top: 4rem; padding-bottom: 4rem; }
+  .vm-location { padding-top: 4rem; padding-bottom: 4rem; }
+
+  .vm-footer__cols { flex-direction: column; gap: 2rem; }
+  .vm-footer__bottom { flex-direction: column; gap: 0.5rem; }
+
+  .vm-location__map iframe { height: 280px; }
+}
+
+/* Archive chambres */
+.vm-rooms--archive {
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  background-color: #F5EFE6;
+}
+
+.vm-rooms__archive-header {
+  margin-bottom: 4rem;
+}
+
+/* Header sur pages internes (non-homepage) : fond blanc + texte sombre immédiatement */
+body:not(.home) .vm-site-header {
+  background: #FFFFFF !important;
+  box-shadow: 0 1px 20px rgba(0,0,0,0.07);
+}
+body:not(.home) .vm-site-header .vm-nav a,
+body:not(.home) .vm-site-header .wp-block-navigation a {
+  color: #16323C !important;
+}
+body:not(.home) .vm-site-header .wp-block-site-title a,
+body:not(.home) .vm-site-header .vm-header__logo a {
+  color: #CEA77C !important;
+}
+body:not(.home) .vm-hamburger span {
+  background: #16323C;
+}
+
+/* Masquer l'icône "external link" sur les liens nav (↗ généré par WP pour opensInNewTab) */
+.vm-nav .wp-block-navigation-item__arrow,
+.vm-nav .wp-block-navigation-item a svg,
+.vm-nav [aria-label*="opens in a new tab"],
+.vm-mobile-menu a svg { display: none !important; }
+
+/* ——— JS: Header scroll detection ——— */
+
+/* ——— META CHAMBRE ——— */
+.vm-chambre-meta__strip {
+  display: flex;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid rgba(22,50,60,0.1);
+  border-bottom: 1px solid rgba(22,50,60,0.1);
+}
+
+.vm-chambre-meta__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.vm-chambre-meta__value {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #16323C;
+  line-height: 1;
+}
+
+.vm-chambre-meta__label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #CEA77C;
+}
+
+.vm-chambre-equipements {
+  margin-top: 2rem;
+}
+
+.vm-chambre-equipements__title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #CEA77C;
+  margin-bottom: 1rem;
+}
+
+.vm-chambre-equipements__list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 1.5rem;
+}
+
+.vm-chambre-equipements__list li {
+  font-size: 0.88rem;
+  color: #4A4A4A;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.vm-chambre-equipements__list li::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: #CEA77C;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Booking price */
+.vm-booking-card__price {
+  margin: 1rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.vm-booking-card__price-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: #CEA77C;
+  line-height: 1;
+}
+
+.vm-booking-card__price-label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+}
+
+/* External booking link */
+.vm-btn-resa-external {
+  display: block;
+  background: transparent;
+  color: #CEA77C !important;
+  border: 1px solid rgba(206,167,124,0.4);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.9rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.vm-btn-resa-external:hover {
+  background: #CEA77C;
+  color: #fff !important;
+}
+
+/* Galerie cover chambres — has-nested-images WP 6.x */
+/* WP génère une règle height:100% très spécifique sur img — on fixe la hauteur sur la figure */
+.vm-single-chambre__body .wp-block-gallery.has-nested-images {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem !important;
+  margin-top: 3rem !important;
+}
+
+.vm-single-chambre__body .wp-block-gallery.has-nested-images figure.wp-block-image {
+  margin: 0 !important;
+  overflow: hidden;
+  height: 300px !important;
+  border-radius: 0 !important;
+}
+
+/* Première image pleine largeur */
+.vm-single-chambre__body .wp-block-gallery.has-nested-images figure.wp-block-image:first-child {
+  grid-column: 1 / -1;
+  height: 460px !important;
+}
+
+/* L'img hérite height:100% de WP → object-fit:cover la remplit sans déformer */
+.vm-single-chambre__body .wp-block-gallery.has-nested-images figure.wp-block-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.vm-single-chambre__body .wp-block-gallery.has-nested-images figure.wp-block-image:hover img {
+  transform: scale(1.04);
+}
+
+@media (max-width: 768px) {
+  .vm-single-chambre__body .wp-block-gallery.has-nested-images {
+    grid-template-columns: 1fr !important;
+  }
+  .vm-single-chambre__body .wp-block-gallery.has-nested-images figure.wp-block-image,
+  .vm-single-chambre__body .wp-block-gallery.has-nested-images figure.wp-block-image:first-child {
+    grid-column: 1 !important;
+    height: 260px !important;
+  }
+}
+
+/* Single chambre hero */
+.vm-single-chambre__hero .wp-block-post-featured-image img,
+.vm-single-chambre__hero img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+.vm-single-chambre__back {
+  margin-bottom: 2rem;
+}
+
+.vm-single-chambre__body {
+  margin-top: 2rem;
+}
+
+/* Booking card spacing */
+.vm-booking-card > * + * { margin-top: 1.2rem; }
+.vm-booking-card .wp-block-separator { margin: 0.8rem 0 !important; }
+
+.vm-single-chambre__back a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #CEA77C;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.vm-single-chambre__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
+  font-weight: 400 !important;
+  color: #16323C !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0 !important;
+}
+
+/* ——— PAGE / INDEX GENERIC TEMPLATE ——— */
+.vm-page-content {
+  background-color: #F5EFE6;
+  padding-top: 10rem;
+  padding-bottom: 6rem;
+  min-height: 60vh;
+}
+
+.vm-page-title {
+  font-family: 'Cormorant Garamond', Georgia, serif !important;
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  font-weight: 400 !important;
+  color: #16323C !important;
+  margin-bottom: 2rem !important;
+}
+
+/* ——— ADMIN BAR : offset pour le header fixe ——— */
+body.admin-bar .wp-block-template-part.vm-site-header,
+body.admin-bar header.vm-site-header {
+  top: var(--wp-admin--admin-bar--height, 32px);
+}
+@media screen and (max-width: 782px) {
+  body.admin-bar .wp-block-template-part.vm-site-header,
+  body.admin-bar header.vm-site-header {
+    top: 46px;
+  }
+}
+
+/* ——— SLIDER CHAMBRE ——— */
+.vm-chambre-slider {
+  position: relative;
+  margin: 2.5rem 0;
+}
+
+.vm-chambre-slider__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  gap: 0;
+  scrollbar-width: none;
+  border-radius: 4px;
+}
+.vm-chambre-slider__track::-webkit-scrollbar { display: none; }
+
+.vm-chambre-slider__slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  height: 480px;
+  overflow: hidden;
+}
+.vm-chambre-slider__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.vm-chambre-slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 0 0;
+}
+.vm-chambre-slider__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.15);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+.vm-chambre-slider__dot.is-active,
+.vm-chambre-slider__dot:hover { background: #CEA77C; }
+
+@media (max-width: 768px) {
+  .vm-chambre-slider__slide { height: 300px; }
+}
+
+/* ——— GOOGLE MAPS ——— */
+.vm-google-maps {
+  overflow: hidden;
+  border-radius: 4px;
+  width: 100%;
+}
+.vm-google-maps iframe {
+  display: block;
+  border: 0;
+}
+
+/* ——— CONDITIONS CHAMBRE ——— */
+.vm-conditions {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: #f9f6f1;
+  border-left: 3px solid #CEA77C;
+  border-radius: 0 4px 4px 0;
+}
+.vm-conditions__title {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: #16323C !important;
+  margin-bottom: 1rem !important;
+}
+.vm-conditions__list {
+  font-size: 0.85rem;
+  color: #4a4a4a;
+  line-height: 1.7;
+  padding-left: 1.2rem;
+}
+.vm-conditions__list li { margin-bottom: 0.4rem; }
+
+/* ——— PAGE CONTACT ——— */
+.vm-contact {
+  padding-top: 8rem !important;
+  padding-bottom: 6rem !important;
+}
+.vm-contact .vm-label {
+  margin-bottom: 0.5rem !important;
+}
+.vm-contact__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(2.8rem, 5vw, 4.5rem) !important;
+  color: #16323C !important;
+  margin-bottom: 2rem !important;
+  margin-top: 0.25rem !important;
+}
+.vm-contact .wp-block-separator {
+  margin-bottom: 3rem !important;
+}
+.vm-contact__cols { gap: 5rem; margin-top: 0; }
+.vm-contact__section-title {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: #CEA77C !important;
+  margin-bottom: 0.75rem !important;
+  margin-top: 2.5rem !important;
+}
+.vm-contact__section-title:first-child { margin-top: 0 !important; }
+.vm-contact__info p { font-size: 0.9rem; line-height: 1.8; margin-bottom: 0.9rem; }
+.vm-contact__info a { color: #16323C; text-decoration: underline; text-underline-offset: 3px; }
+.vm-contact__info a:hover { color: #CEA77C; }
+.vm-contact__map .vm-google-maps { border-radius: 6px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.1); }
+
+/* ——— PAGES LÉGALES ——— */
+.vm-legal {
+  padding-top: 8rem !important;
+  padding-bottom: 6rem !important;
+}
+.vm-legal__title {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
+  color: #16323C !important;
+  margin-bottom: 2.5rem !important;
+}
+.vm-legal__h2 {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.05em !important;
+  color: #16323C !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.75rem !important;
+  padding-bottom: 0.5rem !important;
+  border-bottom: 1px solid rgba(206,167,124,0.3) !important;
+}
+.vm-legal__h3 {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  color: #16323C !important;
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+.vm-legal p { font-size: 0.9rem; line-height: 1.8; color: #333; margin-bottom: 1rem; }
+.vm-legal li { font-size: 0.9rem; line-height: 1.8; color: #333; margin-bottom: 0.3rem; }
+.vm-legal a { color: #CEA77C; text-decoration: underline; text-underline-offset: 3px; }
+.vm-legal__table { width: 100%; margin: 1rem 0 1.5rem; }
+.vm-legal__table table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.vm-legal__table th { background: #16323C; color: #fff; padding: 0.6rem 1rem; text-align: left; font-weight: 500; }
+.vm-legal__table td { padding: 0.6rem 1rem; border-bottom: 1px solid #e8e2d9; }
+.vm-legal__table tr:last-child td { border-bottom: none; }
+
+/* ── Section Restaurant ─────────────────────────────────────────────────── */
+.vm-restaurant {
+    padding: 5rem 2.5rem;
+    background: #fff;
+}
+.vm-restaurant__title {
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    color: #16323C;
+    margin-bottom: 1.5rem !important;
+}
+.vm-restaurant__title em {
+    font-style: italic;
+    color: #CEA77C;
+}
+.vm-restaurant__text {
+    color: #6b5740;
+    line-height: 1.75;
+    margin-bottom: 2rem !important;
+    font-size: 1.05rem;
+}
+.vm-restaurant__img img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+.vm-restaurant__link {
+    display: inline-block;
+    color: #CEA77C;
+    text-decoration: none;
+    border-bottom: 1px solid #CEA77C;
+    padding-bottom: 2px;
+    font-family: var(--wp--preset--font-family--cormorant, 'Cormorant Garamond', serif);
+    font-size: 1.15rem;
+    letter-spacing: .04em;
+    transition: opacity .2s;
+}
+.vm-restaurant__link:hover { opacity: .6; }
+@media (max-width: 768px) {
+    .vm-restaurant__img img { height: 300px; }
+    .vm-restaurant { padding: 3rem 1.5rem; }
+}
+
+/* ── Section Points d'intérêt (Aux alentours) ──────────────────────────── */
+.vm-pois {
+    padding: 5rem 2.5rem;
+    background: #0d1f25;
+}
+.vm-pois .vm-label {
+    color: #CEA77C !important;
+    text-align: center;
+}
+.vm-pois__title {
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    color: #fff !important;
+    text-align: center;
+    margin-bottom: 3rem !important;
+}
+
+.vm-reviews .vm-pois__title {
+  color: #1A2E35 !important;
+}
+.vm-pois__row {
+    display: flex !important;
+    gap: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+.vm-pois__row:last-child { margin-bottom: 0 !important; }
+.vm-pois__col { flex: 1 !important; min-width: 0; }
+.vm-pois__cover {
+    border-radius: 2px !important;
+    overflow: hidden;
+    height: 340px;
+    transition: transform 0.35s ease;
+    display: flex !important;
+    align-items: flex-end !important;
+}
+.vm-pois__cover:hover { transform: scale(1.015); }
+.vm-pois__cover .wp-block-cover__inner-container {
+    padding: 2rem !important;
+    width: 100%;
+}
+.vm-pois__cover-title {
+    font-family: var(--wp--preset--font-family--cormorant) !important;
+    font-size: 1.6rem !important;
+    color: #fff !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    margin: 0 0 0.4rem !important;
+    text-align: left !important;
+}
+.vm-pois__cover-cat {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    color: #CEA77C !important;
+    margin: 0 !important;
+    font-family: var(--wp--preset--font-family--montserrat), sans-serif !important;
+    text-align: left !important;
+}
+@media (max-width: 768px) {
+    .vm-pois { padding: 3rem 1.5rem; }
+    .vm-pois__row { flex-direction: column !important; }
+    .vm-pois__cover { height: 260px; }
+}
+
+/* Footer — liens légaux */
+.vm-footer__legal-links {
+  font-size: 0.72rem !important;
+  color: rgba(255,255,255,0.3) !important;
+}
+.vm-footer__legal-links a {
+  color: rgba(255,255,255,0.3) !important;
+  text-decoration: none;
+}
+.vm-footer__legal-links a:hover { color: #CEA77C !important; }
+
+/* ─── Avis clients ─────────────────────────────────────────────────────────── */
+
+.vm-reviews {
+  background: #F9F6F1;
+  padding: 6rem 2rem;
+}
+
+.vm-reviews__intro { text-align: center; margin-bottom: 3rem; }
+
+.vm-reviews__rating-global {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.vm-reviews__score {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1A2E35;
+  line-height: 1;
+}
+
+.vm-reviews__stars { color: #CEA77C; font-size: 1.2rem; letter-spacing: 0.1em; }
+
+.vm-reviews__count {
+  font-size: 0.78rem;
+  color: #888;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.vm-reviews__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.vm-review-card {
+  background: #fff;
+  padding: 2rem;
+  border-top: 2px solid #CEA77C;
+}
+
+.vm-review-card__stars { color: #CEA77C; font-size: 0.85rem; margin-bottom: 1rem; }
+
+.vm-review-card__text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #1A2E35;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.vm-review-card__author {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.vm-review-card__source {
+  font-size: 0.68rem;
+  color: #CEA77C;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .vm-reviews__grid { grid-template-columns: 1fr; }
+}
+
+/* Icônes sociales : taille pilotée par font-size du bloc (attribut width/height HTML ignoré) */
+.vm-footer__socials svg {
+  width: 1em !important;
+  height: 1em !important;
+}
+
+/* Fix : ne pas écraser le font-size des icônes sociales (hérité du bloc has-*-icon-size) */
+.vm-footer__socials .wp-social-link {
+  font-size: inherit !important;
+}

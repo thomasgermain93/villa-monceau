@@ -1,0 +1,13 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "villa-monceau/chambre-slider",
+    "version": "1.0.0",
+    "title": "Chambre Slider",
+    "category": "media",
+    "description": "Slider des photos attachées à la chambre",
+    "supports": { "html": false },
+    "textdomain": "villa-monceau",
+    "editorScript": "file:./index.js",
+    "render": "file:./render.php"
+}

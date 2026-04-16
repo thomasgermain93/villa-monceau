@@ -1,0 +1,40 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"vm-site-header vm-site-header--light"} /-->
+
+<!-- wp:group {"className":"vm-archive-rooms","align":"full","style":{"color":{"background":"#F5EFE6"},"spacing":{"padding":{"top":"8rem","bottom":"8rem"}}},"layout":{"type":"constrained","contentSize":"1280px"}} -->
+<div class="wp-block-group alignfull vm-archive-rooms has-background" style="background-color:#F5EFE6;padding-top:8rem;padding-bottom:8rem">
+
+  <!-- wp:paragraph {"className":"vm-label"} -->
+  <p class="vm-label">Nos Hébergements</p>
+  <!-- /wp:paragraph -->
+
+  <!-- wp:heading {"level":1,"className":"vm-archive-rooms__title"} -->
+  <h1 class="wp-block-heading vm-archive-rooms__title">Nos chambres &amp; suites</h1>
+  <!-- /wp:heading -->
+
+  <!-- wp:separator {"backgroundColor":"gold","style":{"spacing":{"margin":{"top":"2rem","bottom":"4rem"}}}} -->
+  <hr class="wp-block-separator has-text-color has-gold-color has-alpha-channel-opacity has-gold-background-color has-background" style="margin-top:2rem;margin-bottom:4rem"/>
+  <!-- /wp:separator -->
+
+  <!-- wp:query {"query":{"postType":"chambre","perPage":-1,"orderBy":"title","order":"ASC"},"className":"vm-archive-rooms__query"} -->
+  <div class="wp-block-query vm-archive-rooms__query">
+    <!-- wp:post-template {"layout":{"type":"grid","columnCount":3},"className":"vm-archive-rooms__grid"} -->
+      <!-- wp:group {"className":"vm-room-card","layout":{"type":"flex","orientation":"vertical"}} -->
+      <div class="wp-block-group vm-room-card">
+        <!-- wp:post-featured-image {"isLink":true,"height":"320px","className":"vm-room-card__img"} /-->
+        <!-- wp:group {"className":"vm-room-card__body"} -->
+        <div class="wp-block-group vm-room-card__body">
+          <!-- wp:post-title {"isLink":true,"level":3,"className":"vm-room-card__title"} /-->
+          <!-- wp:post-excerpt {"moreText":"","excerptLength":15,"className":"vm-room-card__excerpt"} /-->
+          <!-- wp:read-more {"content":"Découvrir →","className":"vm-room-card__link"} /-->
+        </div>
+        <!-- /wp:group -->
+      </div>
+      <!-- /wp:group -->
+    <!-- /wp:post-template -->
+  </div>
+  <!-- /wp:query -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

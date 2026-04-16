@@ -1,0 +1,21 @@
+# Backups
+*.bak
+*.backup
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V7
+.Trashes
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Build artifacts
+*.zip
+
+# IDE
+.vscode/
+.idea/

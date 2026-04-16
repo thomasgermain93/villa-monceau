@@ -1,0 +1,46 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"vm-site-header vm-site-header--dark"} /-->
+
+<!-- wp:group {"className":"vm-rooms vm-rooms--archive","align":"full","layout":{"type":"constrained","contentSize":"1280px"}} -->
+<div class="wp-block-group alignfull vm-rooms vm-rooms--archive has-global-padding is-layout-constrained wp-block-group-is-layout-constrained">
+
+  <!-- wp:group {"className":"vm-rooms__archive-header","layout":{"type":"constrained"}} -->
+  <div class="wp-block-group vm-rooms__archive-header is-layout-constrained wp-block-group-is-layout-constrained">
+    <!-- wp:paragraph {"className":"vm-label"} -->
+    <p class="vm-label">Nos Hébergements</p>
+    <!-- /wp:paragraph -->
+    <!-- wp:heading {"level":1,"className":"vm-rooms__title"} -->
+    <h1 class="wp-block-heading vm-rooms__title">Cinq chambres,<br><em>cinq univers</em></h1>
+    <!-- /wp:heading -->
+  </div>
+  <!-- /wp:group -->
+
+  <!-- wp:query {"queryId":1,"query":{"postType":"chambre","perPage":10,"orderBy":"title","order":"ASC","inherit":false},"className":"vm-rooms__grid"} -->
+  <div class="wp-block-query vm-rooms__grid">
+
+    <!-- wp:post-template {"className":"vm-rooms__cards","layout":{"type":"grid","columnCount":3}} -->
+
+      <!-- wp:group {"className":"vm-room-card","layout":{"type":"flex","orientation":"vertical"}} -->
+      <div class="wp-block-group vm-room-card is-vertical is-layout-flex wp-block-group-is-layout-flex">
+
+        <!-- wp:post-featured-image {"isLink":true,"height":"320px","className":"vm-room-card__img"} /-->
+
+        <!-- wp:group {"className":"vm-room-card__body"} -->
+        <div class="wp-block-group vm-room-card__body is-layout-flow wp-block-group-is-layout-flow">
+          <!-- wp:post-title {"isLink":true,"level":3,"className":"vm-room-card__title"} /-->
+          <!-- wp:post-excerpt {"moreText":"","excerptLength":15,"className":"vm-room-card__excerpt"} /-->
+          <!-- wp:read-more {"content":"Découvrir →","className":"vm-room-card__link"} /-->
+        </div>
+        <!-- /wp:group -->
+
+      </div>
+      <!-- /wp:group -->
+
+    <!-- /wp:post-template -->
+
+  </div>
+  <!-- /wp:query -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

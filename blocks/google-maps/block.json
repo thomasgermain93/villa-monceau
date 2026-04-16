@@ -1,0 +1,23 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "villa-monceau/google-maps",
+    "version": "1.0.0",
+    "title": "Google Maps",
+    "category": "embed",
+    "description": "Carte Google Maps embarquée",
+    "supports": { "html": false },
+    "attributes": {
+        "address": {
+            "type": "string",
+            "default": "Avenue de l'Étoile, 1340 Ottignies-LLN, Belgique"
+        },
+        "height": {
+            "type": "integer",
+            "default": 450
+        }
+    },
+    "textdomain": "villa-monceau",
+    "editorScript": "file:./index.js",
+    "render": "file:./render.php"
+}

@@ -1,0 +1,24 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "villa-monceau/poi-grid",
+    "version": "1.0.0",
+    "title": "Points d'intérêt",
+    "category": "design",
+    "description": "Grille 2x2 des points d'intérêt aux alentours",
+    "supports": { "html": false },
+    "attributes": {
+        "pois": {
+            "type": "array",
+            "default": [
+                { "imageId": 111, "imageUrl": "", "title": "Louvain-la-Neuve", "cat": "Ville universitaire · 5 min" },
+                { "imageId": 112, "imageUrl": "", "title": "Domaine de Lauzelle", "cat": "Nature & Golf · 10 min" },
+                { "imageId": 113, "imageUrl": "", "title": "L'Esplanade", "cat": "Shopping & Restaurants · 5 min" },
+                { "imageId": 114, "imageUrl": "", "title": "Aéroport de Zaventem", "cat": "Connexions internationales · 25 min" }
+            ]
+        }
+    },
+    "textdomain": "villa-monceau",
+    "editorScript": "file:./index.js",
+    "render": "file:./render.php"
+}

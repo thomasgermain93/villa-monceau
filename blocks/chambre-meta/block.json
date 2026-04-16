@@ -1,0 +1,13 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "villa-monceau/chambre-meta",
+    "version": "1.0.0",
+    "title": "Chambre Meta",
+    "category": "widgets",
+    "description": "Affiche la superficie, capacité et prix de la chambre",
+    "supports": { "html": false },
+    "textdomain": "villa-monceau",
+    "editorScript": "file:./index.js",
+    "render": "file:./render.php"
+}

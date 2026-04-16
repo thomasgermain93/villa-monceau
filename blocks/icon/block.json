@@ -1,0 +1,19 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "villa-monceau/icon",
+    "version": "1.0.0",
+    "title": "Icône",
+    "category": "design",
+    "description": "Icône SVG décorative (Wi-Fi, petit-déjeuner, parking, horloge)",
+    "supports": { "html": false },
+    "attributes": {
+        "type": {
+            "type": "string",
+            "default": "wifi"
+        }
+    },
+    "textdomain": "villa-monceau",
+    "editorScript": "file:./index.js",
+    "render": "file:./render.php"
+}
