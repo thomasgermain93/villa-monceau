@@ -215,7 +215,8 @@ img { max-width: 100%; height: auto; display: block; }
   height: 1px !important;
   background-color: #CEA77C !important;
   border: none !important;
-  margin: 0 auto !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .vm-hero__tagline {
@@ -417,7 +418,7 @@ img { max-width: 100%; height: auto; display: block; }
   height: 1px !important;
   background-color: #CEA77C !important;
   border: none !important;
-  margin: 1.5rem 0 !important;
+  margin: 1.5rem auto !important;
 }
 
 .vm-about__link a {
@@ -1564,4 +1565,44 @@ body.admin-bar header.vm-site-header {
 /* Fix : ne pas écraser le font-size des icônes sociales (hérité du bloc has-*-icon-size) */
 .vm-footer__socials .wp-social-link {
   font-size: inherit !important;
+}
+
+/* Corporate promo — separator spacing */
+.vm-corporate-promo .wp-block-separator {
+  margin-top: 1.5rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Corporate promo — design system alignment */
+.vm-corporate-promo h2.vm-hero__title {
+  font-size: clamp(2.2rem, 4vw, 3.5rem) !important;
+  color: #ffffff !important;
+  margin-top: 0.75rem !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.15 !important;
+}
+
+.vm-corporate-promo .wp-block-buttons {
+  margin-top: 1.75rem !important;
+}
+
+.vm-corporate-promo p:not(.vm-label) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  opacity: 0.85;
+}
+
+/* Corporate promo — hauteur réduite */
+.vm-corporate-promo {
+  min-height: 380px !important;
+}
+.vm-corporate-promo .wp-block-cover__inner-container {
+  padding-top: 3.5rem !important;
+  padding-bottom: 3.5rem !important;
+}
+
+/* Corporate promo — override vm-hero inner-container constraints */
+.vm-corporate-promo .wp-block-cover__inner-container {
+  min-height: auto !important;
+  padding: 3.5rem 2rem !important;
 }

@@ -17,8 +17,8 @@
       <!-- wp:paragraph {"className":"vm-label"} -->
       <p class="vm-label">Nos Hébergements</p>
       <!-- /wp:paragraph -->
-      <!-- wp:heading {"level":2,"className":"vm-rooms__title"} -->
-      <h2 class="wp-block-heading vm-rooms__title">Cinq chambres,<br><em>cinq univers</em></h2>
+      <!-- wp:heading {"level":2,"fontSize":"heading-lg","fontFamily":"display","className":"vm-rooms__title"} -->
+      <h2 class="wp-block-heading has-heading-lg-font-size has-display-font-family vm-rooms__title">Cinq chambres,<br><em>cinq univers</em></h2>
       <!-- /wp:heading -->
       <!-- wp:paragraph -->
       <p>Chaque chambre est un monde en soi — admirablement décorée, meublée avec soin et pensée pour votre confort et votre intimité.</p>

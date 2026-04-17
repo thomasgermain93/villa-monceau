@@ -25,8 +25,8 @@
       <!-- wp:paragraph {"className":"vm-label"} -->
       <p class="vm-label">Gastronomie</p>
       <!-- /wp:paragraph -->
-      <!-- wp:heading {"level":2,"className":"vm-restaurant__title"} -->
-      <h2 class="wp-block-heading vm-restaurant__title">Restaurant <em>Cécila</em></h2>
+      <!-- wp:heading {"level":2,"fontSize":"heading-md","fontFamily":"display","className":"vm-restaurant__title"} -->
+      <h2 class="wp-block-heading has-heading-md-font-size has-display-font-family vm-restaurant__title">Restaurant <em>Cécila</em></h2>
       <!-- /wp:heading -->
       <!-- wp:paragraph -->
       <p>À deux pas de la Villa, le restaurant Cécila propose une cuisine gastronomique belge dans un cadre élégant. Une expérience culinaire d'exception, à réserver pour prolonger votre séjour.</p>

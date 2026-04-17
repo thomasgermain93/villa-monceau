@@ -13,8 +13,8 @@
   <p class="vm-label has-text-align-center">Aux alentours</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:heading {"level":2,"textAlign":"center","className":"vm-pois__title"} -->
-  <h2 class="wp-block-heading has-text-align-center vm-pois__title">Que faire aux alentours&nbsp;?</h2>
+  <!-- wp:heading {"level":2,"textAlign":"center","fontSize":"heading-md","fontFamily":"display","className":"vm-pois__title"} -->
+  <h2 class="wp-block-heading has-text-align-center has-heading-md-font-size has-display-font-family vm-pois__title">Que faire aux alentours&nbsp;?</h2>
   <!-- /wp:heading -->
 
   <!-- wp:columns {"className":"vm-pois__row"} -->

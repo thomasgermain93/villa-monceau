@@ -19,8 +19,8 @@
       <p class="vm-label">À propos de la Villa</p>
       <!-- /wp:paragraph -->
 
-      <!-- wp:heading {"level":2,"className":"vm-about__title"} -->
-      <h2 class="wp-block-heading vm-about__title">Une bâtisse<br><em>au toit de chaume</em></h2>
+      <!-- wp:heading {"level":2,"fontSize":"heading-lg","fontFamily":"display","className":"vm-about__title"} -->
+      <h2 class="wp-block-heading has-heading-lg-font-size has-display-font-family vm-about__title">Une bâtisse<br><em>au toit de chaume</em></h2>
       <!-- /wp:heading -->
 
     </div>

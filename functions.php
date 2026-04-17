@@ -20,7 +20,7 @@ add_action('wp_enqueue_scripts', function() {
         null
     );
     wp_enqueue_style('villa-monceau-style', get_stylesheet_uri(), [], '1.0.0');
-    wp_enqueue_style('villa-monceau-custom', get_template_directory_uri() . '/assets/css/custom.css', ['villa-monceau-style'], '1.0.1');
+    wp_enqueue_style('villa-monceau-custom', get_template_directory_uri() . '/assets/css/custom.css', ['villa-monceau-style'], '1.0.6');
     wp_enqueue_script('villa-monceau-js', get_template_directory_uri() . '/assets/js/main.js', [], '1.1.0', true);
 });
 

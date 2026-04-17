@@ -16,8 +16,8 @@
   <p class="has-text-align-center vm-hero__label">Hôtel Boutique &nbsp;·&nbsp; Ottignies-LLN</p>
   <!-- /wp:paragraph -->
 
-  <!-- wp:heading {"level":1,"textAlign":"center","className":"vm-hero__title"} -->
-  <h1 class="wp-block-heading has-text-align-center vm-hero__title">Une escapade au<br><em>cœur du Brabant</em></h1>
+  <!-- wp:heading {"level":1,"textAlign":"center","fontSize":"heading-xl","fontFamily":"display","className":"vm-hero__title"} -->
+  <h1 class="wp-block-heading has-text-align-center has-heading-xl-font-size has-display-font-family vm-hero__title">Une escapade au<br><em>cœur du Brabant</em></h1>
   <!-- /wp:heading -->
 
   <!-- wp:separator {"backgroundColor":"gold","className":"vm-divider-gold"} -->
